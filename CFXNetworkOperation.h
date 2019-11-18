@@ -12,6 +12,8 @@
 // This class must be subclassed and you should override -processIncomingData.
 // You can also override -validateResponse:withError:
 
+// The idea is that you need very minimum properties should be set. Only the ones in argument of the designated initializer are compulsory!
+
 // TODO: handle operation retrying (such as 3x per default with delay?). Should be configurable
 
 #import <Foundation/Foundation.h>

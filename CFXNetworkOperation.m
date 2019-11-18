@@ -157,6 +157,8 @@
 
 -(NSMutableURLRequest*)serializeRequestWithMethod:(nonnull NSString *)method urlString:(nonnull NSString *)urlString requestParameters:(NSDictionary<NSString *, NSString *> *)requestParameters error:(NSError **)error
 {
+    NSAssert(method != nil, @"method must not be nil");
+    
     NSURLComponents *urlComponents = [NSURLComponents componentsWithString:urlString];
     if(urlComponents == nil) {
         if(error) {
