@@ -77,6 +77,20 @@
     }
 }
 
+-(void)setLocalConfig:(NSURLSessionConfiguration *)localConfig
+{
+    if([self isExecuting]) {
+        [NSException raise:NSInternalInconsistencyException format:@"You should not modify the NetworkOperation localConfig while it's running. It should be set before starting the operation."];
+    }
+    
+    NSURLSessionConfiguration *usedConfig = localConfig;
+    if(!localConfig) {
+        usedConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    }
+    
+    _localConfig = usedConfig;
+}
+
 -(NSURLSession *)localURLSession
 {
     if(!_localURLSession)
