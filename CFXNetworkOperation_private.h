@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CFXNetworkOperation ()
 {
-    // render the finished property readwrite. But unfortunately NSOperationQueue is listening for "isFinished" notification instead of "finished"
-    // Important note, as of iOS 11/macOS 10.3 it seems that changed: https://developer.apple.com/library/content/releasenotes/Foundation/RN-Foundation/index.html
+    // renders the finished property readwrite. But unfortunately NSOperationQueue is listening for "isFinished" notification instead of "finished"
+    // Important note, as of iOS 11/macOS 10.13 it seems that changed: https://developer.apple.com/library/content/releasenotes/Foundation/RN-Foundation/index.html
     BOOL _finished;
 }
 
@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nullable, readwrite) id responseObject;
 //@property(readwrite) NSError *error;
 
-@property(readwrite, getter=isFinished) BOOL finished; // render the finished property readwrite but maintain KVO on "isFinished"
+@property(readwrite, getter=isFinished) BOOL finished; // render the finished property readwrite but maintain KVO on "isFinished" (see _finished comment above)
 
 #pragma mark - Protected, meant to be overriden
 

@@ -5,6 +5,13 @@
 //  Created by Aurélien Hugelé on 20/04/16.
 //  Copyright © 2016 Carrafix. All rights reserved.
 //
+
+// A base class to perform an atomic/isolated network operation, as AFNetwork 3.x became too cumbersome and clunky (mostly because NSURLSession is hard to maintain in an NSOperation).
+// Each request should be isolated in an NSOperation. Dependencies, prioritization etc... can be controled through NSOperation/Queue APIs.
+
+// This class must be subclassed and you should override -processIncomingData.
+// You can also override -validateResponse:withError:
+
 // TODO: handle operation retrying (such as 3x per default with delay?). Should be configurable
 
 #import <Foundation/Foundation.h>

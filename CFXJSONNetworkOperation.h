@@ -5,6 +5,7 @@
 //  Created by Aurélien Hugelé on 20/04/16.
 //  Copyright © 2016 Carrafix. All rights reserved.
 //
+// This class is dedicated to HTTP requests with decoding/encoding of JSON bodies
 
 #import "CFXNetworkOperation.h"
 
