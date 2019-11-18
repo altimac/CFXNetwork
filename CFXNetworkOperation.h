@@ -9,7 +9,7 @@
 // A base class to perform an atomic/isolated network operation, as AFNetwork 3.x became too cumbersome and clunky (mostly because NSURLSession is hard to maintain in an NSOperation).
 // Each request should be isolated in an NSOperation. Dependencies, prioritization etc... can be controled through NSOperation/Queue APIs.
 
-// This class must be subclassed and you should override -processIncomingData.
+// This class must be subclassed and you should override -processIncomingDataWithError:.
 // You can also override -validateResponse:withError:
 
 // The idea is that you need very minimum properties should be set. Only the ones in argument of the designated initializer are compulsory!

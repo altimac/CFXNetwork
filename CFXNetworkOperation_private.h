@@ -33,9 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Protected, meant to be overriden
 
--(BOOL)validateResponse:(NSHTTPURLResponse *)response withError:(NSError **)error __attribute__((objc_requires_super));
--(BOOL)processIncomingDataWithError:(NSError **)error;
--(void)callResponseBlockAsynchronously;
+-(BOOL)validateResponse:(NSHTTPURLResponse *)response withError:(NSError **)error __attribute__((objc_requires_super)); // typically to handle HTTP status code
+-(BOOL)processIncomingDataWithError:(NSError **)error; // mostly to decode body (JSON, Plist, XML whatever)
+-(void)callResponseBlockAsynchronously; // can be helpful to override if you want typically want to handle custom server errors (when the server returns HTTP status code 200 (aka OK), but in the body of the response the server says there is an error: typically a JSON object like {"success: false, "error: bla error bla invalid request")}. You can then at the end return an error/failure to the caller, when in fact, at the HTTP level, it's not an error. Can also be used to do many other things such as benchmarking, logging...
 
 
 @end
