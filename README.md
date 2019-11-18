@@ -19,11 +19,11 @@ CFXJSONNetworkOperation *mainOp = [[HDYNetworkOperation alloc] initWithMethod:@"
 
     op.responseBlock = ^(CFXNetworkOperation *operation, id responseObject, NSError *error) {
         
-        // responseObject is a JSON unmarshaled object, aka an NSDictionary*
+        // responseObject is a JSON unmarshaled object, aka an NSDictionary*, NSArray*, NSNumber* or nothin
         if(!responseObject) {
             if(completionBlock)
                 dispatch_async(self.completionQueue,^{
-                    completionBlock(nil, (CFXNetworkOperation*)operation); // typically call the completion block when the request failed, the operation will contain the error
+                    completionBlock(nil, (CFXNetworkOperation*)operation); // typically call the completion block when the request failed, the operation will contain the HTTP error
                 });
             
             return;
