@@ -1,6 +1,8 @@
 # CFXNetwork
 A minimalist, but easy way to do client HTTP network operations and encode/decode bodies (easy to extend to anything else than JSON)
 
+The main idea is that the base class inherits NSOperation. It allows leverage this very cool API to handle dependencies, prioritization, cancelling, queue/thread control etc...
+
 
 Usage/Example :
 This pseudo code suppose you have a completion block to call at the end of the async request...
