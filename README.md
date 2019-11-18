@@ -1,7 +1,7 @@
 # CFXNetwork
-A minimalist, but easy way to do client HTTP network operations and encode/decode (JSON) bodies (also easy to extend support XML, Plist etc...)
+A minimalist, but easy way to do client HTTP network operations and encode/decode (JSON) bodies (also easy to extend to support XML, Plist etc...)
 
-The main idea is that the base class inherits NSOperation. It allows leverage this very cool API to handle dependencies, prioritization, cancelling, parallelism or serial, queue/thread control etc...
+The main idea is that the base class inherits NSOperation. It allows leveraging this very cool API to handle dependencies, prioritization, cancelling, parallelism or serial, queue/thread control etc...
 
 Like every iOS developer, I used to use AFNetwork (now "AlamoFire"). But since many years know I just find all those layers simply bloatware, complex and cumbersome. Reading their documentation is just too long when what you need is just an HTTP client. I'm simply amazed there even is a layer above AlamoFire (Moya) that is successful... Just their Cocoapods/Carthage/SPM documentation is bigger than this project entire code 🤣
 I hate loosing control and I can't debug those helpers when a problem arise.
