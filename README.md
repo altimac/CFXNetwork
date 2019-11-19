@@ -11,7 +11,7 @@ Usage/Example :
 This pseudo code suppose you have a completion block to call at the end of the async request...
 
 ```
-CFXJSONNetworkOperation *mainOp = [[HDYNetworkOperation alloc] initWithMethod:@"POST" urlString:@"https://meta.herdly.cloud/servers.json" parameters:nil];
+CFXJSONNetworkOperation *mainOp = [[CFXJSONNetworkOperation alloc] initWithMethod:@"POST" urlString:@"https://meta.herdly.cloud/servers.json" parameters:nil];
     
     // completely optional, but shown as a cool option for the README
     mainOp.localConfig.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData; // we can specifically ask URL loading system not to use cache for this request. There are many other settings you can look at, but I like the minimal setup to just work :)
