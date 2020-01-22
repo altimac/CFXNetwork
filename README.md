@@ -30,7 +30,7 @@ CFXJSONNetworkOperation *mainOp = [[CFXJSONNetworkOperation alloc] initWithMetho
             return;
         }
                 
-        credential = [responseObject objectForKey:@"credential"]; // let's say the webservice returned a token credential in the body     
+        NSString *credential = [responseObject objectForKey:@"credential"]; // let's say the webservice returned a token credential in the body     
     
         if(completionBlock) dispatch_async(self.completionQueue,^{
                 completionBlock(credential, operation); // typically call the completion block when the request succeed
