@@ -1,5 +1,5 @@
 # CFXNetwork
-A minimalist, but easy way to do client HTTP network operations and encode/decode (JSON) bodies (also easy to extend to support XML, Plist etc...)
+A minimalist, but easy way to do client HTTP network operations and encode/decode (JSON) bodies (also easy to extend to support XML, Plist etc...) on Apple plateforms.
 
 The main idea is that the base class inherits NSOperation. It allows leveraging this very cool API to handle dependencies, prioritization, cancelling, parallelism or serial, queue/thread control etc...
 
