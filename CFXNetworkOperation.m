@@ -58,7 +58,7 @@
         return;
     }
     
-    self.sessionTask = [self.localURLSession dataTaskWithRequest:self.request];
+    self.sessionTask = [self createSessionTask]; // by default creates an NSURLSessionDataTask, can be overriden to create another type of NSURLSessionTask
     [self.sessionTask resume];
 }
 
@@ -112,6 +112,11 @@
 }
                     
 #pragma mark - Protected, meant to be overriden
+
+-(NSString *)debugDescription
+{
+    return [self description]; // because it seems NSOperation debugDescription does not call description!!
+}
 
 -(NSString *)description
 {
@@ -261,6 +266,12 @@
     }
     
     return request;
+}
+
+-(NSURLSessionTask*)createSessionTask
+{
+    // by default creates an NSURLSessionDataTask, can be overriden to create another type of NSURLSessionTask
+    return [self.localURLSession dataTaskWithRequest:self.request];
 }
 
 -(void)callResponseBlockAsynchronously
